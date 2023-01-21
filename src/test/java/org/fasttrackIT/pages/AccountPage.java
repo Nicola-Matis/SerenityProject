@@ -5,7 +5,7 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AccountPage extends PageObject {
+public class AccountPage extends BasePage {
 
     @FindBy(css = ".hello strong")
     private WebElementFacade welcomeTextElement;

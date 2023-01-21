@@ -7,7 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.FindBy;
 
 @DefaultUrl("http://testfasttrackit.info/selenium-test/")
-public class HomePage extends PageObject {
+public class HomePage extends BasePage {
 
 
     @FindBy(css = ".skip-account .label")
@@ -50,7 +50,6 @@ public class HomePage extends PageObject {
     }
 
     public void setSearchField(String searchValue) {
-        searchField.clear();
         typeInto(searchField, searchValue);
     }
 

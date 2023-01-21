@@ -1,19 +1,9 @@
 package org.fasttrackIT.steps;
 
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.steps.ScenarioSteps;
-import org.fasttrackIT.pages.HomePage;
-import org.fasttrackIT.pages.LoginPage;
-import org.fasttrackIT.pages.ProductsPage;
-import org.fasttrackIT.pages.RegisterPage;
 import org.junit.Assert;
 
-public class SearchSteps extends ScenarioSteps {
-
-    private LoginPage loginPage;
-    private HomePage homePage;
-    private ProductsPage productsPage;
-
+public class SearchSteps extends BaseSteps {
 
     @Step
     public void Search() {
@@ -26,4 +16,37 @@ public class SearchSteps extends ScenarioSteps {
     public void isSearchResultVisible(String searcResult){
         Assert.assertTrue(productsPage.isSearchResultVisible(searcResult));
     }
+
+    @Step
+    public void searchForKeyword(String keyword) {
+        homePage.setSearchField(keyword);
+    }
+
+    @Step
+    public void clickSearchIcon() {
+        homePage.clickSearchButton();
+    }
+
+    @Step
+    public void verifyProductIsInList(String productName) {
+        Assert.assertTrue("The product was not found in the list!", searchResultsPage.isProductInList(productName));
+    }
+
+    @Step
+    public void orderProductsByPrice() {
+        searchResultsPage.selectPriceFromDropdown();
+    }
+
+    @Step
+    public void productsAreSortedByPriceAscending() {
+        Assert.assertTrue("The price is not sorted ascending!", searchResultsPage.isPriceAscending());
+    }
+
+    @Step
+    public void goToProductDetailsPage(String productName){
+        searchForKeyword(productName);
+        clickSearchIcon();
+        verifyProductIsInList(productName);
+    }
 }
+

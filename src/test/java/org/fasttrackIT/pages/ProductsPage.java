@@ -6,7 +6,7 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ProductsPage extends PageObject{
+public class ProductsPage extends BasePage{
 
     @FindBy(css = "#nav > ol > li.level0.nav-5.parent > a") //.active .has-children
     private WebElementFacade saleCategory;

@@ -1,17 +1,8 @@
 package org.fasttrackIT.steps;
 
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.steps.ScenarioSteps;
-import org.fasttrackIT.pages.AccountPage;
-import org.fasttrackIT.pages.HomePage;
-import org.fasttrackIT.pages.LoginPage;
-import org.junit.Assert;
 
-public class LoginSteps extends ScenarioSteps {
-
-    private AccountPage accountPage;
-    private HomePage homePage;
-    private LoginPage loginPage;
+public class LoginSteps extends BaseSteps {
 
     @Step
     public void navigateToLoginPage() {

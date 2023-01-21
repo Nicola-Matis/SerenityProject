@@ -2,7 +2,5 @@ package org.fasttrackIT.pages;
 
 import net.thucydides.core.pages.PageObject;
 
-public class WishlistPage extends BasePage {
-
-
+public class BasePage extends PageObject {
 }
