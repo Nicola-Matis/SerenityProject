@@ -29,11 +29,7 @@ public class AddToWishlist {
 
     @Test
     public void AddToWishlist() {
-        loginSteps.navigateToLoginPage();
-        loginSteps.typeUserEmail("vladimirputin@mail.ru");
-        loginSteps.typePassword("mustcrushcapitalism123");
-        loginSteps.clickLogin();
-        loginSteps.userIsLoggedIn("Vladimir Putin Vladimirochi");
+        loginSteps.doLogin("vladimirputin@mail.ru","mustcrushcapitalism123" );
         wishlistSteps.AddItem1ToWishlist();
     }
 }

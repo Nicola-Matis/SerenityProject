@@ -26,10 +26,7 @@ public class LoginLogout {
 
     @Test
     public void LoginLogout(){
-        loginSteps.navigateToLoginPage();
-        loginSteps.typeUserEmail("vladimirputin@mail.ru");
-        loginSteps.typePassword("mustcrushcapitalism123");
-        loginSteps.clickLogin();
+        loginSteps.doLogin("vladimirputin@mail.ru","mustcrushcapitalism123" );
         loginSteps.userIsLoggedIn("Vladimir Putin Vladimirochi");
         loginSteps.LogOutOfAccount();
         loginSteps.userIsLoggedOut("You have logged out and will be redirected to our homepage in 5 seconds.");

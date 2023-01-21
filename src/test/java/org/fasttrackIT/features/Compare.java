@@ -29,10 +29,7 @@ public class Compare {
 
     @Test
     public void Login() {
-        loginSteps.navigateToLoginPage();
-        loginSteps.typeUserEmail("vladimirputin@mail.ru");
-        loginSteps.typePassword("mustcrushcapitalism123");
-        loginSteps.clickLogin();
+        loginSteps.doLogin("vladimirputin@mail.ru","mustcrushcapitalism123" );
         compareSteps.CompareItem1();
     }
 }

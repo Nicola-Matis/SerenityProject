@@ -28,10 +28,7 @@ public class LoginTest {
 
     @Test
     public void LoginTest(){
-        loginSteps.navigateToLoginPage();
-        loginSteps.typeUserEmail("vladimirputin@mail.ru");
-        loginSteps.typePassword("mustcrushcapitalism123");
-        loginSteps.clickLogin();
+        loginSteps.doLogin("vladimirputin@mail.ru","mustcrushcapitalism123" );
         loginSteps.userIsLoggedIn("Vladimir Putin Vladimirochi");
     }
 }
