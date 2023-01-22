@@ -20,6 +20,9 @@ public class ProductsPage extends BasePage{
     @FindBy(css = ".main-container .note-msg")
     private WebElementFacade emptySearchResult;
 
+    @FindBy(css = ".add-to-cart-buttons .btn-cart")
+    private WebElementFacade addToCartButton;
+
     public void clickSaleCategory(){
         clickOn(saleCategory);
     }
@@ -34,5 +37,9 @@ public class ProductsPage extends BasePage{
 
     public boolean isSearchResultVisible(String searchResult) {
         return emptySearchResult.containsOnlyText(searchResult);
+    }
+
+    public void clickAddToCartButton(){
+        clickOn(addToCartButton);
     }
 }

@@ -33,9 +33,10 @@ public class SearchResultsPage extends BasePage {
         sortByDropdown.selectByIndex(2);
     }
 
-//    public boolean isPriceAscending() {
-//        int firstPrice = getIntFromPrice(listOfPrices.get(0).getText());
-//        int secondPrice = getIntFromPrice(listOfPrices.get(listOfPrices.size() - 1).getText());
-//        return firstPrice <= secondPrice;
-//    }
+    public boolean isPriceAscending() {
+        int firstPrice = getIntFromPrice(listOfPrices.get(0).getText());
+        int secondPrice = getIntFromPrice(listOfPrices.get(listOfPrices.size() - 1).getText());
+
+        return firstPrice <= secondPrice;
+    }
 }
