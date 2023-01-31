@@ -9,19 +9,19 @@ public class LoginPage  extends BasePage {
     @FindBy(id = "email")
     private WebElementFacade emailField;
 
-    @FindBy(id = "pass")
-    private WebElementFacade passwordField;
-
-    @FindBy(id = "send2")
-    private WebElementFacade loginButton;
-
     public void setEmailField(String value) {
         typeInto(emailField, value);
     }
 
+    @FindBy(id = "pass")
+    private WebElementFacade passwordField;
+
     public void setPasswordField(String value) {
         typeInto(passwordField, value);
     }
+
+    @FindBy(id = "send2")
+    private WebElementFacade loginButton;
 
     public void clickLoginButton() {
         clickOn(loginButton);

@@ -7,31 +7,25 @@ import org.openqa.selenium.support.FindBy;
 
 public class AccountPage extends BasePage {
 
-    @FindBy(css = ".hello strong")
-    private WebElementFacade welcomeTextElement;
-
-    @FindBy(xpath = "//*[@id=\"top\"]/body/div/div[2]/div[2]/div/div/p")
-    private WebElementFacade goodbyeTextElement;
-
-    @FindBy(css = ".skip-active .empty")
-    private WebElementFacade EmptyCartElement;
-
-    @FindBy(xpath = "//*[@id=\"top\"]/body/div/div[2]/div[2]/div/div[2]/div[2]/div[1]/ul/li/ul/li/span")
-    private WebElementFacade Item1WishlistConfirmationMessage;
-
-    @FindBy(xpath = "//*[@id=\"top\"]/body/div/div[2]/div[2]/div/div[2]/div[2]/ul/li/ul/li/span")
-    private WebElementFacade Item1CompareMessage;
-
     @FindBy(css = ".buttons-set .button")
     private WebElementFacade RegisterButton;
+
+    @FindBy(css = ".hello strong")
+    private WebElementFacade welcomeTextElement;
 
     public String getWelcomeText() {
         return welcomeTextElement.getText();
     }
 
+    @FindBy(xpath = "//*[@id=\"top\"]/body/div/div[2]/div[2]/div/div/p")
+    private WebElementFacade goodbyeTextElement;
+
     public String getGoodbyeText() {
         return goodbyeTextElement.getText();
     }
+
+    @FindBy(css = ".skip-active .empty")
+    private WebElementFacade EmptyCartElement;
 
     public String getEmptyCartElement() {
         return EmptyCartElement.getText();
@@ -53,9 +47,15 @@ public class AccountPage extends BasePage {
         goodbyeTextElement.shouldContainOnlyText(LogOutMessage);
     }
 
+    @FindBy(xpath = "//*[@id=\"top\"]/body/div/div[2]/div[2]/div/div[2]/div[2]/div[1]/ul/li/ul/li/span")
+    private WebElementFacade Item1WishlistConfirmationMessage;
+
     public void Item1WasAddedWishlist(){
         Item1WishlistConfirmationMessage.isDisabled();
     }
+
+    @FindBy(xpath = "//*[@id=\"top\"]/body/div/div[2]/div[2]/div/div[2]/div[2]/ul/li/ul/li/span")
+    private WebElementFacade Item1CompareMessage;
 
     public void Item1WasAddedCompare(){Item1CompareMessage.isDisplayed();}
 }

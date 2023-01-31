@@ -11,11 +11,6 @@ public class SearchResultsPage extends BasePage {
     @FindBy(css = ".products-grid .product-name")
     private List<WebElementFacade> listOfProductNames;
 
-    @FindBy(css = ".products-grid .regular-price")
-    private List<WebElementFacade> listOfPrices;
-
-    @FindBy(css = ".category-products > .toolbar select[title='Sort By']")
-    private WebElementFacade sortByDropdown;
 
     public boolean isProductInList(String productName) {
         waitFor(listOfProductNames.get(0));
@@ -29,9 +24,15 @@ public class SearchResultsPage extends BasePage {
         return false;
     }
 
+    @FindBy(css = ".category-products > .toolbar select[title='Sort By']")
+    private WebElementFacade sortByDropdown;
+
     public void selectPriceFromDropdown() {
         sortByDropdown.selectByIndex(2);
     }
+
+    @FindBy(css = ".products-grid .regular-price")
+    private List<WebElementFacade> listOfPrices;
 
     public boolean isPriceAscending() {
         int firstPrice = getIntFromPrice(listOfPrices.get(0).getText());
